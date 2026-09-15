@@ -95,3 +95,9 @@ Optional Pixeltable dashboard (localhost only; use SSH port-forwarding if needed
 ```bash
 PIXELTABLE_DASHBOARD_PORT=<PORT> uv run python -c "import pixeltable as pxt; pxt.dashboard.serve(open_browser=False); input('Dashboard running — press Enter to stop')"
 ```
+
+## License
+
+Copyright 2026 The Authors.
+
+This code is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).

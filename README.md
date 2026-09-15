@@ -2,9 +2,11 @@
 
 Evaluating the Transferability of Pathology Foundation Models Across Cancer-related H&E versus Neurodegeneration-related Immunohistochemical Classification Tasks
 
-This repository is the code archive for that preprint. It loads pathology tiles into [Pixeltable](https://pixeltable.com/), computes foundation-model embeddings, and evaluates frozen-embedding linear probes against ResNet CNN fine-tuning.
+This repository archives **example code** for the methods in that preprint: loading pathology tiles into [Pixeltable](https://pixeltable.com/), computing foundation-model embeddings, and evaluating frozen-embedding linear probes against ResNet CNN fine-tuning.
 
-The snapshot covers the **four datasets used in the paper**:
+**Datasets are not included.** The four public datasets used in the paper are available from their original open sources; this archive does not redistribute them or spell out how to download them. The commands below are illustrative and assume you already have tiles on disk in the layout each loader expects.
+
+The example pipeline is written for these four datasets:
 
 | Dataset | CLI name | Pixeltable slug | Task |
 | --- | --- | --- | --- |
@@ -32,7 +34,7 @@ Copy `.env.example` to `.env` and set `HF_TOKEN` for Hugging Face gated models. 
 
 A pip-oriented lockfile is in `requirements.txt`. Non-uv users can `pip install -r requirements.txt`.
 
-## Pipeline
+## Example pipeline
 
 ```
 [optional] vizcarra-2023-create-tiles.py   # tau ROIs → classification tiles
@@ -47,6 +49,8 @@ results-analysis.ipynb                     # paper figures from reports/
 Loaders are idempotent on `(dataset, tileName)`. Embedding is incremental on `(dataset, tileName, model_id)`.
 
 ### 1. Load tiles
+
+Point `--source` at a local copy of the dataset (not provided here).
 
 ```bash
 uv run python -m load_tiles --help

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.env
+.embedding_runs.jsonl
+custom_models/*.pt
+custom_models/*.pth
+custom_models/*.torchscript.pt
+reports/
